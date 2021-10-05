@@ -21,14 +21,16 @@ for line in open_file:
   print(total)
 
 #6 Loop through all the data, and print out the total for all invoices combined.
-new_total = 0
+total_invoice = 0
 for line in open_file:
-  
-   value = line.split(',')
-   invoice1 = float(value[3])
-   invoice2 = float(value[4])
-   prices = (invoice1 * invoice2)
-   new_total += prices
-   rounded_total = round(new_total, 2)
+  value = line.split(',')
+  quality = int(value[3])
+  price = float(value[4])
+  total = (quality * price)
+  total_invoice = total + total_invoice
 
-print(rounded_total)
+print(total_invoice)
+
+
+#7
+open_file.close()
